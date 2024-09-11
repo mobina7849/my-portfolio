@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, { useEffect } from 'react';
 import { Box, Typography, Container,Grid, Card } from '@mui/material';
 import CircularWithValueLabel from './Prograss';
 
@@ -35,6 +36,7 @@ const skills:SkillsType[]=[
 ]
 
 const About: React.FC = () => {
+
   return (
     <Container maxWidth="md" id="about" style={{ padding: '50px 20px' }} >
         <Grid display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
@@ -44,15 +46,15 @@ const About: React.FC = () => {
         <Typography variant="h3" gutterBottom>
         Lets introduce something
       </Typography>
-      <Typography variant="body1" color="textSecondary" textAlign={'center'}>
+      <Typography variant="body1" color="textSecondary" textAlign={'center'} >
         I am a full-stack developer with expertise in building modern web applications.
         I specialize in React, Next.js, and TypeScript to create high-performance websites.
       </Typography>
 
       <Grid display={'flex'} gap={4} my={4} sx={{flexWrap:'wrap'}} justifyContent={'center'}>
         {skills.map(({name,percent},index)=>(
-      <Card sx={{padding:'16px',display:'flex',flexDirection:'column',alignItems:'center'}}>
-      <Typography>
+      <Card sx={{padding:'32px',display:'flex',flexDirection:'column',alignItems:'center',width:{md:'unset',xs:'100%'}}}>
+      <Typography variant='h4' m={4} >
           {name}
       </Typography>
     <CircularWithValueLabel end={percent}/>
